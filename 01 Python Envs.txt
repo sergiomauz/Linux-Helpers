@@ -1,0 +1,61 @@
+1.- Verificar que esten instalados:
+    python3 --version
+    pip --version
+    curl --version
+    pyenv --version
+    
+2.- Instalar anteriores si es que no estan disponibles
+    sudo apt-get -y install python3-pip
+    curl https://pyenv.run | bash
+
+3.- Verificar que pyenv se cargue junto con el bash:
+    code ~/.bashrc
+
+4.- Reiniciar bash
+    exec $SHELL
+
+5.- Verificar  :
+    pyenv --version
+    which pyenv
+
+6.- Listar versiones de python disponibles:    
+    pyenv install -l
+
+7.- Instalar una o varias versiones de python:
+    pyenv install anaconda3-2022.05 -v          # Ejemplo de instalar anaconda
+    pyenv install 3.10.5 -v                     # Ejemplo de instalar otro python
+
+8.- Asignar una version global:
+    pyenv global 3.10.5
+
+    8.1.- Para ver la version actual de python corriendo:
+            python --version
+
+9.- Crear un entorno virtual considerando la version de python instalada y el nombre
+    pyenv virtualenv 3.10.5 miEntorno
+
+10.- Listar los entornos virtuales y ver cual se esta usando (marcado con un *):
+        pyenv virtualenvs
+
+11.- Activar un entorno virtual:
+        pyenv activate miEntorno 
+
+12.- Activar un entorno virtual:
+        pyenv deactivate
+
+13.- Eliminar un entorno virtual
+        pyenv virtualenv-delete miEntorno
+
+14.- En caso de crear nuevos entornos virtuales Anaconda, primero seleccionar una version de Python Anaconda con pyenv:
+        pyenv global anaconda3-2022.05
+
+15.- Ahora con el terminal moverse a una carpeta, donde se instalaran las librerias del entorno virtual        
+        cd /home/AlgunLugar
+
+16.- Crear entorno con conda, considerando la version de python actual
+        conda create -n miEntornoAnaconda python=3.9.12 anaconda
+
+17.- Eliminar entorno conda:
+        conda env remove -n miEntornoAnaconda
+
+

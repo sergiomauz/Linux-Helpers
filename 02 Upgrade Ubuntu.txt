@@ -1,0 +1,9 @@
+1.- Actualizar todo
+    sudo apt-get update -y
+    sudo apt-get dist-upgrade -y
+
+2.- Simplicar promt en terminal, editar archivo BASH y agregar PROMPT_DIRTRIM=1:
+    code ~/.bashrc     ------------->       PROMPT_DIRTRIM=1
+
+3.- Ver la version de UbuntuÑ
+    lsb_release -a
