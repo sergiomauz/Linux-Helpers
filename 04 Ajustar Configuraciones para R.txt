@@ -1,0 +1,47 @@
+0.- Asegurarse que esté instalado y corriendo una version de python anaconda, paquetes de R lo requieren.
+
+1.- Instalar en Linux según indicaciones de la página web:
+    https://cran.r-project.org/
+
+2.- Agregar extension "R", y "R Markdown All In One" en Vscode.
+
+3.- Obtener el directorio de R en Linux:
+    R                       # Entrar en R desde terminal Linux
+    R.home("bin")           # En terminal de R para obtener directorio
+
+4.- Entrar a la configuracion de extension de R para VsCode, y en el parametros RPath para Linux, copiar la ruta del directorio de R.
+
+5.- Instalar radian desde un entorno con anaconda:
+    conda install -c conda-forge radian
+
+6.- Obtener ruta de radian:
+    which radian
+
+7.- Entrar a la configuracion de extension de R para VsCode, y en el parametrois RTerm para Linux, copiar la ruta del directorio de Radian.
+
+8.- Instalar FactoMineR, factoextra, useHttpgd, rmarkdown y corrplot como prueba. Si arroja errores, verificar las librerías que faltan (son dependencias), e instalarlas una a una.
+
+
+9.- Instalar librerias que podrian faltar, por ejemplo:
+	sudo apt-get install pandoc
+	
+10.- Asegurarse que en la configuracion de VsCode esten estas lineas:
+    "python.terminal.activateEnvironment": false,  
+	"r.plot.defaults.colorTheme": "original",
+    "r.plot.defaults.fullWindowMode": false,        
+    "r.alwaysUseActiveTerminal": true,        
+    "r.rpath.linux": "/usr/lib/R/bin",
+    "r.rterm.linux": "/home/ubuntu/.pyenv/shims/radian",
+    "r.bracketedPaste": true,    
+    "r.rmarkdown.knit.openOutputFile": true,
+    "r.rmarkdown.knit.defaults.knitWorkingDirectory": "document directory",
+    "r.plot.useHttpgd": true,
+    "r.session.viewers.viewColumn": {
+        "plot": "Active",
+        "viewer": "Active",
+        "pageViewer": "Beside",
+        "view": "Active",
+        "helpPanel": "Active"
+    }
+
+	

@@ -1,0 +1,24 @@
+---------------------- INSTALAR CERTBOT ----------------------
+sudo apt upgrade
+sudo apt update
+sudo apt-get upgrade
+sudo apt-get update
+sudo apt-get install nginx
+sudo apt-get install certbot python3-certbot-nginx python3-certbot-apache
+
+
+---------------------- CREAR SSL Y GUARDAR EN D:/SSL PARA SZETAPP.COM ----------------------
+sudo certbot certonly --manual --preferred-challenges=dns --email hello@szetapp.com --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d *.szetapp.com
+sudo certbot certonly --manual --preferred-challenges=dns --email hello@szetapp.com --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d *.szetapp.com -d szetapp.com
+
+sudo chmod -R 777 /etc/letsencrypt/live/
+sudo chmod -R 777 /etc/letsencrypt/live/szetapp.com/
+
+cd /etc/letsencrypt/live/szetapp.com/
+
+sudo openssl pkcs12 -export -out certificate.pfx -inkey privkey.pem -in cert.pem -certfile chain.pem
+
+sudo cp -r /etc/letsencrypt/live/szetapp.com/ /mnt/d/SSL/
+
+
+sudo certbot certonly --force-renew -d *.szetapp.com
